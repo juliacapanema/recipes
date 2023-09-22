@@ -2,6 +2,7 @@ package com.vaadin.application.views;
 
 import com.vaadin.application.views.about.AboutView;
 import com.vaadin.application.views.helloworld.HelloWorldView;
+import com.vaadin.application.views.login.LoginView;
 import com.vaadin.application.views.personform.PersonFormView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -52,6 +53,7 @@ public class MainLayout extends AppLayout {
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
 
+        nav.addItem(new SideNavItem("Login", LoginView.class, LineAwesomeIcon.SIGN_IN_ALT_SOLID.create()));
         nav.addItem(new SideNavItem("Hello World", HelloWorldView.class, LineAwesomeIcon.GLOBE_SOLID.create()));
         nav.addItem(new SideNavItem("About", AboutView.class, LineAwesomeIcon.FILE.create()));
         nav.addItem(new SideNavItem("Person Form", PersonFormView.class, LineAwesomeIcon.USER.create()));
