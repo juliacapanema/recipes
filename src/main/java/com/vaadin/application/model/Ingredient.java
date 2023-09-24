@@ -1,2 +1,8 @@
-package com.vaadin.application.views;public class Ingredient {
+package com.vaadin.application.model;
+
+public class Ingredient {
+    private String portion;
+    private String name;
+
+
 }
