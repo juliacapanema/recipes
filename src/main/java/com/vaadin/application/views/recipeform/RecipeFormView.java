@@ -18,22 +18,41 @@ import com.vaadin.flow.router.Route;
 public class RecipeFormView extends Composite<VerticalLayout> {
 
     public RecipeFormView() {
+
         H3 title = new H3("Recipe Register");
-        TextField recipeName = new TextField("Name:");
-        TextField recipeDescription = new TextField("Description:");
-        Button button = new Button("Next");
 
-        VerticalLayout column1 = new VerticalLayout();
-        HorizontalLayout line1 = new HorizontalLayout();
-        HorizontalLayout line2 = new HorizontalLayout();
-        HorizontalLayout line3 = new HorizontalLayout();
+        TextField recipeName = new TextField("Recipe Name:");
+        TextField recipeTime = new TextField("Time to prepare:");
+        TextField recipeIngredients = new TextField("Ingredients:");
+        TextField recipePreparation = new TextField("Preparation process:");
 
-        line1.add(title);
-        line2.add(recipeName, recipeDescription);
-        line3.add(button);
-        column1.add(line1,line2,line3);
+        Button button = new Button("Save");
 
-        getContent().add(column1);
+        VerticalLayout page = new VerticalLayout();
+
+        HorizontalLayout header = new HorizontalLayout();
+            header.add(title);
+
+        HorizontalLayout body = new HorizontalLayout();
+
+            VerticalLayout bodyColumn1 = new VerticalLayout();
+                bodyColumn1.add(recipeName);
+                bodyColumn1.add(recipeIngredients);
+
+            VerticalLayout bodyColumn2 = new VerticalLayout();
+                bodyColumn2.add(recipeTime);
+                bodyColumn2.add(recipePreparation);
+
+            body.add(bodyColumn1,bodyColumn2);
+
+        HorizontalLayout footer = new HorizontalLayout();
+            footer.add(button);
+
+        page.add(header,body,footer);
+
+        getContent().add(page);
+
+
 
 
     }

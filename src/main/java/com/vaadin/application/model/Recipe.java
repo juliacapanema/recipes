@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Recipe {
     private String name;
-    private String description;
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private String ingredients;
     private Preparation preparation;
 
 }
